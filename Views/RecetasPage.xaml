@@ -3,6 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoRecetas.Views.RecetasPage"
              Title="Recetas">
-    <!-- Insertar Contenido de Página aqui -->
+    
+    <StackLayout Padding="20">
+        <Label Text="Recetas de hoy" 
+               FontSize="24" 
+               HorizontalOptions="Center" />
+
+        <!-- Recipe Cards -->
+        <CollectionView ItemsSource="{Binding Recipes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:RecipeCard />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Bottom Icons -->
+        <Grid ColumnDefinitions="*,*" Padding="0,20,0,0">
+            <Image Source="refresh_icon.png"
+                   HorizontalOptions="Center"
+                   WidthRequest="50"
+                   HeightRequest="50" />
+            <Image Source="settings_icon.png"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"
+                   WidthRequest="50"
+                   HeightRequest="50" />
+        </Grid>
+    </StackLayout>
     
 </ContentPage>
