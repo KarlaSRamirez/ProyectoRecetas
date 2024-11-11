@@ -3,41 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoRecetas.Views.MainPage"
              Title="Main Page">
-    <VerticalStackLayout Padding="20">
-        <Label 
-            Text="Bienvenido a la aplicación de recetas"
-            FontSize="24"
-            HorizontalOptions="Center"
-            VerticalOptions="Start" />
+    <Grid>
+        <Image Source="fondo_login.jpg"
+           Aspect="AspectFill"
+           Opacity="0.3"  
+           VerticalOptions="FillAndExpand"
+           HorizontalOptions="FillAndExpand"/>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-        <Image 
-            Source="logo.png"
-            WidthRequest="150"
-            HeightRequest="150"
-            HorizontalOptions="Center" />
+            <!-- Contenedor del título -->
+            <Frame BackgroundColor="White"
+               CornerRadius="20"
+               Padding="10"
+               HasShadow="True"
+               HorizontalOptions="Center">
+                <Label Text="Log In"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"/>
+            </Frame>
 
-        <Label 
-            Text="Encuentra tus recetas favoritas y aprende a cocinar con facilidad."
-            FontSize="18"
-            HorizontalOptions="Center"
-            VerticalOptions="StartAndExpand" />
+            <!-- Contenedor del formulario de inicio de sesión -->
+            <Frame BackgroundColor="#E0E0E0"
+               CornerRadius="20"
+               Padding="20,30"
+               Margin="0,20,0,0"
+               HasShadow="True"
+               WidthRequest="250">
 
-        <Button 
-            Text="Comenzar"
-            FontSize="18"
-            BackgroundColor="LightBlue"
-            TextColor="White"
-            VerticalOptions="End"
-            HorizontalOptions="Center" 
-            Clicked="OnStartButtonClicked"/>
+                <StackLayout Spacing="15">
 
-        <Button 
-            Text="Ir a Recetas"
-            FontSize="18"
-            BackgroundColor="LightBlue"
-            TextColor="White"
-            VerticalOptions="End"
-            HorizontalOptions="Center" 
-            Clicked="OnNavigateButtonClicked"/>
-    </VerticalStackLayout>
+                    <!-- Campo de usuario -->
+                    <Entry Placeholder="Username"
+                       FontSize="Medium"
+                       TextColor="Black"
+                       BackgroundColor="Transparent"/>
+
+                    <!-- Campo de contraseña -->
+                    <Entry Placeholder="Password"
+                       FontSize="Medium"
+                       TextColor="Black"
+                       IsPassword="True"
+                       BackgroundColor="Transparent"/>
+
+                    <!-- Enlace de recuperación de contraseña -->
+                    <Label Text="I forgot..."
+                       FontSize="Small"
+                       HorizontalOptions="End"
+                       TextColor="Gray"/>
+
+                    <!-- Botón de entrada -->
+                    <Button Text="Enter"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        WidthRequest="100"
+                        HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </Grid>
 </ContentPage>
