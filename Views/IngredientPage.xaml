@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:ProyectoRecetas.Components"
+             x:Class="ProyectoRecetas.Views.IngredientPage"
+             Title="IngredientPage"
+             Padding="20"
+             BackgroundColor="White">
+    
+    <StackLayout>
+        <!-- Título de la página -->
+        <Label Text="Tus ingredientes"
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="0,20,0,10"/>
+
+        <!-- Lista de tarjetas de ingredientes -->
+        <ScrollView>
+            <StackLayout>
+                <components:IngredientCard />
+                <components:IngredientCard />
+                <components:IngredientCard />
+                <components:IngredientCard />
+                <components:IngredientCard />
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Botón flotante para agregar ingredientes -->
+        <Button Text="+" 
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                Padding="15"
+                FontSize="20"
+                CornerRadius="30"
+                WidthRequest="70"
+                HeightRequest="70"/>
+    </StackLayout>
+</ContentPage>

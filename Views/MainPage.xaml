@@ -59,7 +59,8 @@
                         FontAttributes="Bold"
                         CornerRadius="10"
                         WidthRequest="100"
-                        HorizontalOptions="Center"/>
+                        HorizontalOptions="Center"
+                        Clicked="OnNavigateButtonClicked"/>
                 </StackLayout>
             </Frame>
 

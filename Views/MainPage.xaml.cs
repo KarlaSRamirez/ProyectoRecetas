@@ -6,4 +6,9 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
     }
+    private async void OnNavigateButtonClicked(object sender, EventArgs e)
+    {
+        // Lógica para navegar a la siguiente página
+        await Navigation.PushAsync(new IngredientPage());
+    }
 }
