@@ -6,4 +6,10 @@ public partial class IngredientPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void OnNavigateButtonClicked(object sender, EventArgs e)
+    {
+        // Agrega la nueva página a la pila
+        await Navigation.PushAsync(new AddRecipePage());
+    }
 }

@@ -3,23 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoRecetas.Components.IngredientCard"
              Padding="10"
-             BackgroundColor="White"
-             Margin="10">
+             BackgroundColor="White">
     
     <Frame BorderColor="#D3D3D3" CornerRadius="10" HasShadow="True">
-        <StackLayout Orientation="Horizontal" Padding="10">
+        <StackLayout Orientation="Horizontal" Padding="5">
             <!-- Nombre del ingrediente -->
-            <Entry Placeholder="Name" WidthRequest="150" />
+            <Label Text="Ingrediente" Margin="5, 0"/>
 
             <!-- Cantidad -->
-            <Entry Placeholder="Cantidad" WidthRequest="100" />
+            <Label Text="Cantidad" Margin="5, 0"/>
 
             <!-- F.C. -->
-            <Entry Placeholder="F.C." WidthRequest="100" />
-
-            <!-- Punto de elipsis (...) -->
-            <Label Text="..." VerticalOptions="Center" />
-
+            <Label Text="Fecha Caducidad" Margin="5, 0"/>
         </StackLayout>
     </Frame>
 </ContentView>

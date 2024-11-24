@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:components="clr-namespace:ProyectoRecetas.Components"
              x:Class="ProyectoRecetas.Views.IngredientPage"
-             Title="IngredientPage"
+             Title="Tus Ingredientes"
              Padding="20"
              BackgroundColor="White">
-    
-    <StackLayout>
-        <!-- Título de la página -->
-        <Label Text="Tus ingredientes"
-               FontSize="24"
-               HorizontalOptions="Center"
-               Margin="0,20,0,10"/>
+
+    <AbsoluteLayout>
 
         <!-- Lista de tarjetas de ingredientes -->
-        <ScrollView>
+        <ScrollView 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
             <StackLayout>
+                <components:IngredientCard />
+                <components:IngredientCard />
+                <components:IngredientCard />
                 <components:IngredientCard />
                 <components:IngredientCard />
                 <components:IngredientCard />
@@ -26,15 +26,15 @@
         </ScrollView>
 
         <!-- Botón flotante para agregar ingredientes -->
-        <Button Text="+" 
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                BackgroundColor="#4CAF50"
-                TextColor="White"
-                Padding="15"
-                FontSize="20"
-                CornerRadius="30"
-                WidthRequest="70"
-                HeightRequest="70"/>
-    </StackLayout>
+        <Button
+            Text="+"
+            CornerRadius="100"
+            BackgroundColor="#41B149"
+            TextColor="White"
+            AbsoluteLayout.LayoutBounds="0.5,0.72"
+            AbsoluteLayout.LayoutFlags="All"
+            WidthRequest="75"
+            HeightRequest="75"
+            Clicked="OnNavigateButtonClicked"/>
+    </AbsoluteLayout>
 </ContentPage>
