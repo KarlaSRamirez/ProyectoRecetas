@@ -6,4 +6,9 @@ public partial class RecetasPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void OnNavigateButtonClicked(object sender, EventArgs e)
+    {
+        
+        await Navigation.PushAsync(new IngredientPage());
+    }
 }

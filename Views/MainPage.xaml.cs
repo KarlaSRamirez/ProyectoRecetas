@@ -8,7 +8,7 @@ public partial class MainPage : ContentPage
     }
     private async void OnNavigateButtonClicked(object sender, EventArgs e)
     {
-        // Lógica para navegar a la siguiente página
-        await Navigation.PushAsync(new IngredientPage());
+        // Agrega la nueva página a la pila
+        await Navigation.PushAsync(new RecetasPage());
     }
 }

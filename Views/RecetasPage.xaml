@@ -4,33 +4,46 @@
              xmlns:components="clr-namespace:ProyectoRecetas.Components"
              x:Class="ProyectoRecetas.Views.RecetasPage"
              Title="Recetas">
-    
-    <StackLayout Padding="20">
-        <Label Text="Recetas de hoy" 
-               FontSize="24" 
-               HorizontalOptions="Center" />
 
-        <!-- Recipe Cards -->
-        <ScrollView>
-            <StackLayout>
+    <AbsoluteLayout>
+        <!-- Contenido principal con Scroll -->
+        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+            <StackLayout Padding="20" Spacing="20">
+                <!-- Título -->
+                <Label Text="Recetas de hoy" 
+                       FontSize="24" 
+                       HorizontalOptions="Center" />
+
+                <!-- Cards de recetas -->
+                <components:RecipeCard />
+                <components:RecipeCard />
+                <components:RecipeCard />
+                <components:RecipeCard />
                 <components:RecipeCard />
                 <components:RecipeCard />
             </StackLayout>
         </ScrollView>
 
+        <!-- Botón fijo -->
+        <Button Text="A"
+            CornerRadius="100"
+            BackgroundColor="#41B149"
+            TextColor="White"
+            AbsoluteLayout.LayoutBounds="0.32,0.71"
+            AbsoluteLayout.LayoutFlags="All"
+            WidthRequest="75"
+            HeightRequest="75" />
 
-        <!-- Bottom Icons -->
-        <Grid ColumnDefinitions="*,*" Padding="0,20,0,0">
-            <Image Source="refresh_icon.png"
-                   HorizontalOptions="Center"
-                   WidthRequest="50"
-                   HeightRequest="50" />
-            <Image Source="settings_icon.png"
-                   Grid.Column="1"
-                   HorizontalOptions="Center"
-                   WidthRequest="50"
-                   HeightRequest="50" />
-        </Grid>
-    </StackLayout>
-    
+        <Button Text="B"
+                CornerRadius="100"
+                BackgroundColor="#41B149"
+                TextColor="White"
+                AbsoluteLayout.LayoutBounds="0.68,0.71"
+                AbsoluteLayout.LayoutFlags="All"
+                WidthRequest="75"
+                HeightRequest="75" 
+                Clicked="OnNavigateButtonClicked"/>
+    </AbsoluteLayout>
+
 </ContentPage>
