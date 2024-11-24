@@ -3,10 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoRecetas.Views.SignPage"
              Title="SignPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+
+            <!-- Título -->
+            <Label Text="Registro"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center" />
+
+            <!-- Contenedor Verde -->
+            <Frame BackgroundColor="#4CAF50" CornerRadius="10" Padding="20" HasShadow="True">
+                <StackLayout Spacing="15">
+
+                    <!-- Nombre de Usuario -->
+                    <Entry Placeholder="Nombre de usuario"
+                           TextColor="White"
+                           PlaceholderColor="White"
+                           BackgroundColor="Transparent" />
+
+                    <!-- Contraseña -->
+                    <Entry Placeholder="Contraseña"
+                           IsPassword="True"
+                           TextColor="White"
+                           PlaceholderColor="White"
+                           BackgroundColor="Transparent" />
+
+                    <!-- Confirmar Contraseña -->
+                    <Entry Placeholder="Confirmar contraseña"
+                           IsPassword="True"
+                           TextColor="White"
+                           PlaceholderColor="White"
+                           BackgroundColor="Transparent" />
+
+                </StackLayout>
+            </Frame>
+
+            <!-- Botón Crear -->
+            <Button Text="Crear"
+                    BackgroundColor="#A5D6A7"
+                    TextColor="Black"
+                    CornerRadius="20"
+                    Padding="10"
+                    HorizontalOptions="Center" />
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
