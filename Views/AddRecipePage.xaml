@@ -16,7 +16,26 @@
             
             <Label Text="New Ingredient" HorizontalTextAlignment="Center" FontSize="Large"></Label>
             <Label Text="Name"></Label>
-            <Entry Background="White"></Entry>
+            <Entry Background="White" ></Entry>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20">
+
+                <StackLayout Margin="10,0">
+                    <Label Text="Cantidad"></Label>
+                    <Entry Background="White"></Entry>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Fecha Caducidad"></Label>
+                    <Entry Background="White"></Entry>
+                </StackLayout>
+
+            </StackLayout>
+            <Label Text="Descripcion"></Label>
+            <Editor Background="White" HeightRequest="200" Margin="0,10"></Editor>
+            <Button BackgroundColor="Green"
+                    Text="Agregar"/>
+
         </StackLayout>
     </Frame>
 </ContentPage>

@@ -11,4 +11,9 @@ public partial class RecetasPage : ContentPage
         
         await Navigation.PushAsync(new IngredientPage());
     }
+    private async void OnNavigateButtonClicked1(object sender, EventArgs e)
+    {
+
+        await Navigation.PushAsync(new HistoryPage());
+    }
 }

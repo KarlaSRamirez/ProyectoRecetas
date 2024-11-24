@@ -33,7 +33,8 @@
             AbsoluteLayout.LayoutBounds="0.32,0.71"
             AbsoluteLayout.LayoutFlags="All"
             WidthRequest="75"
-            HeightRequest="75" />
+            HeightRequest="75" 
+            Clicked="OnNavigateButtonClicked1"/>
 
         <Button Text="B"
                 CornerRadius="100"
