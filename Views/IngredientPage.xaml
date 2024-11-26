@@ -13,15 +13,8 @@
         <ScrollView 
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All">
-            <StackLayout>
-                <components:IngredientCard />
-                <components:IngredientCard />
-                <components:IngredientCard />
-                <components:IngredientCard />
-                <components:IngredientCard />
-                <components:IngredientCard />
-                <components:IngredientCard />
-                <components:IngredientCard />
+            <StackLayout x:Name="ingredientCardsStackLayout" Margin="0,0,0,80">
+                <!-- Las tarjetas de ingredientes se agregarán aquí dinámicamente -->
             </StackLayout>
         </ScrollView>
 
