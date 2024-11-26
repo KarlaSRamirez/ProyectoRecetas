@@ -12,23 +12,19 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
             <!-- Contenedor del título -->
-            <Frame BackgroundColor="White"
-               CornerRadius="20"
+            <Border BackgroundColor="White"
                Padding="10"
-               HasShadow="True"
                HorizontalOptions="Center">
                 <Label Text="Log In"
                    FontSize="Large"
                    HorizontalOptions="Center"
                    TextColor="Gray"/>
-            </Frame>
+            </Border>
 
             <!-- Contenedor del formulario de inicio de sesión -->
-            <Frame BackgroundColor="#E0E0E0"
-               CornerRadius="20"
+            <Border BackgroundColor="#E0E0E0"
                Padding="20,30"
                Margin="0,20,0,0"
-               HasShadow="True"
                WidthRequest="250">
 
                 <StackLayout Spacing="15">
@@ -62,7 +58,7 @@
                         HorizontalOptions="Center"
                         Clicked="OnNavigateButtonClicked"/>
                 </StackLayout>
-            </Frame>
+            </Border>
 
         </StackLayout>
     </Grid>

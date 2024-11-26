@@ -4,11 +4,9 @@
              x:Class="ProyectoRecetas.Views.AddRecipePage"
              Title="AddRecipePage">
     
-    <Frame BackgroundColor="#E0E0E0"
-       CornerRadius="20"
+    <Border BackgroundColor="#E0E0E0"
        Padding="20,30"
        Margin="20"
-       HasShadow="True"
        WidthRequest="250"
        HeightRequest="550">
         
@@ -37,5 +35,5 @@
                     Text="Agregar"/>
 
         </StackLayout>
-    </Frame>
+    </Border>
 </ContentPage>
