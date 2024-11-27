@@ -8,17 +8,23 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    public static class GlobalVariables
+    {
+        public static string Username { get; set; } = string.Empty;
+    }
+
     private async void OnNavigateButtonClicked(object sender, EventArgs e)
     {
         var username = ((StackLayout)((Button)sender).Parent).Children.OfType<Entry>().FirstOrDefault(x => x.Placeholder == "Username")?.Text;
         var password = ((StackLayout)((Button)sender).Parent).Children.OfType<Entry>().FirstOrDefault(x => x.Placeholder == "Password")?.Text;
 
+        GlobalVariables.Username = username;
         // Crear la cadena de conexión
         var builder = new MySqlConnectionStringBuilder
         {
             // IP Joska 247.1
-            // IP Sugey 0.249
-            Server = "192.168.247.1",     // Dirección del servidor de la base de datos
+            // IP Sugey 60.1
+            Server = "localhost",    // Dirección del servidor de la base de datos
             UserID = "root",          // Usuario
             Password = "11julio2002",  // Contraseña del usuario
             Database = "RecetasBD"    // Nombre de la base de datos

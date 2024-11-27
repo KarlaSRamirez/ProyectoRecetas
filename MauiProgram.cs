@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using OxyPlot.Maui.Skia;
 
 namespace ProyectoRecetas
 {
@@ -9,6 +10,7 @@ namespace ProyectoRecetas
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseOxyPlotSkia()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
