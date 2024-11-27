@@ -62,10 +62,11 @@ public partial class IngredientPage : ContentPage
             // Ahora agregamos las tarjetas de ingredientes al StackLayout
             foreach (var ingredient in ingredientsList)
             {
-                IngredientCard ingredientCard = new IngredientCard();
-
-                // Establecer el BindingContext para cada IngredientCard
-                ingredientCard.BindingContext = ingredient;
+                IngredientCard ingredientCard = new IngredientCard
+                {
+                    // Establecer el BindingContext para cada IngredientCard
+                    BindingContext = ingredient
+                };
 
                 // Agregar la tarjeta al StackLayout dinámicamente
                 ingredientCardsStackLayout.Children.Add(ingredientCard);

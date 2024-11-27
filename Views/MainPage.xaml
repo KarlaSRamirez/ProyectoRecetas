@@ -43,10 +43,12 @@
                        BackgroundColor="Transparent"/>
 
                     <!-- Enlace de recuperación de contraseña -->
-                    <Label Text="I forgot..."
+                    <Button Text="Registrarse"
+                       Background="Transparent"
                        FontSize="Small"
                        HorizontalOptions="End"
-                       TextColor="Gray"/>
+                       TextColor="Gray"
+                       Clicked="OnSigninButtonClicked"/>
 
                     <!-- Botón de entrada -->
                     <Button Text="Enter"

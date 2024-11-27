@@ -8,6 +8,11 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    private async void OnSigninButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SignPage());
+    }
+
     private async void OnNavigateButtonClicked(object sender, EventArgs e)
     {
         var username = ((StackLayout)((Button)sender).Parent).Children.OfType<Entry>().FirstOrDefault(x => x.Placeholder == "Username")?.Text;
