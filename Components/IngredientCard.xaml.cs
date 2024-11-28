@@ -1,4 +1,5 @@
 using MySqlConnector;
+using ProyectoRecetas.Views;
 using static ProyectoRecetas.Views.IngredientPage;
 
 namespace ProyectoRecetas.Components
@@ -132,6 +133,11 @@ namespace ProyectoRecetas.Components
                     "OK"
                 );
             }
+        }
+
+        private async void NavActualizar(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ActualizarPage());
         }
     }
 }

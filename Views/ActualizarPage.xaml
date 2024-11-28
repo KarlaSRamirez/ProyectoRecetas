@@ -4,50 +4,56 @@
              x:Class="ProyectoRecetas.Views.ActualizarPage"
              Title="Actualizar Ingrediente"
              BackgroundColor="white">
-    <Grid Padding="20">
-        <!-- Título -->
-        <Label Text="Ingredient"
-               FontSize="20"
-               HorizontalOptions="Center"
-               VerticalOptions="Start" />
 
-        <!-- Nombre del Ingrediente -->
-        <Label Text="Name"
-               VerticalOptions="Start"
-               HorizontalOptions="Start" />
-        <Entry x:Name="ingredientName"
-               Placeholder="Enter ingredient name"
-               HorizontalOptions="FillAndExpand" />
+    <Border BackgroundColor="#E0E0E0"
+   Padding="20,20"
+   Margin="20"
+   WidthRequest="300"
+   HeightRequest="520">
 
-        <!-- Cantidad -->
-        <Label Text="Cantidad"
-               VerticalOptions="Start"
-               HorizontalOptions="Start" />
-        <Entry x:Name="quantity"
-               Placeholder="Enter quantity"
-               HorizontalOptions="FillAndExpand" />
+        <StackLayout>
 
-        <!-- F.C. -->
-        <Label Text="F.C."
-               VerticalOptions="Start"
-               HorizontalOptions="Start" />
-        <Entry x:Name="fC"
-               Placeholder="Enter F.C."
-               HorizontalOptions="FillAndExpand" />
+            <Label Text="Ingrediente" 
+               HorizontalTextAlignment="Center" 
+               FontSize="Large" 
+               Margin="0,0,0,20"/>
+            <Label Text="Ingrediente"/>
+            <Entry x:Name="Nombre" 
+               Background="Transparent"/>
 
-        <!-- Descripción -->
-        <Label Text="Descripción"
-               VerticalOptions="Start"
-               HorizontalOptions="Start" />
-        <Editor x:Name="description"
-                Placeholder="Enter description"
-                HeightRequest="100"
-                HorizontalOptions="FillAndExpand" />
+            <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="Center" 
+                     Margin="0,20">
 
-        <!-- Botón Añadir -->
-        <Button Text="Añadir"
-                BackgroundColor="#4CAF50"
-                TextColor="White"
-                VerticalOptions="End" />
-    </Grid>
+                <StackLayout Margin="0,0,10,0"
+                         WidthRequest="100">
+                    <Label Text="Cantidad" 
+                       HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="Cantidad" 
+                       Background="Transparent"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Unidad de Medida"/>
+                    <Entry x:Name="Unidad_de_Medida" 
+                       Background="Transparent"/>
+                </StackLayout>
+
+            </StackLayout>
+            <Label Text="Fecha Caducidad"></Label>
+            <Entry x:Name="Caducidad" 
+               Background="Transparent" 
+               Placeholder="YYYY-MM-DD"></Entry>
+            <Label Text="Descripcion"></Label>
+            <Editor x:Name="Descripcion" 
+                Background="Transparent" 
+                HeightRequest="110" 
+                Margin="0,10" 
+                TextChanged="OnEditorTextChanged"/>
+            <Button BackgroundColor="Green"
+                Text="Actualizar"
+                Clicked=""/>
+
+        </StackLayout>
+    </Border>
 </ContentPage>
