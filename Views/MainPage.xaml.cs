@@ -8,6 +8,11 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    public static class GlobalVariables
+    {
+        public static string UsuarioActual { get; set; } = string.Empty;
+    }
+
     private async void OnSigninButtonClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new SignPage());
@@ -50,6 +55,7 @@ public partial class MainPage : ContentPage
                 Console.WriteLine("Usuario autenticado exitosamente.");
                 // Aquí puedes navegar a otra página, por ejemplo:
                 await Navigation.PushAsync(new RecetasPage());
+                GlobalVariables.UsuarioActual = username;
             }
             else
             {
