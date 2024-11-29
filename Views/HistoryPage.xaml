@@ -19,9 +19,6 @@
                 <ScrollView Orientation="Horizontal">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <!-- Aquí se usa tu componente de receta -->
-                        <components:RecipeCard />
-                        <components:RecipeCard />
-                        <components:RecipeCard />
                         
                         <!-- Añade más según sea necesario -->
                     </StackLayout>
@@ -39,9 +36,6 @@
                 <ScrollView Orientation="Horizontal">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <!-- Aquí se usa tu componente de receta -->
-                        <components:RecipeCard />
-                        <components:RecipeCard />
-                        <components:RecipeCard />
                         
                         <!-- Añade más según sea necesario -->
                     </StackLayout>
@@ -59,9 +53,7 @@
                 <ScrollView Orientation="Horizontal">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <!-- Aquí se usa tu componente de receta -->
-                        <components:RecipeCard />
-                        <components:RecipeCard />
-                        <components:RecipeCard />
+                        
                         <!-- Añade más según sea necesario -->
                     </StackLayout>
                 </ScrollView>

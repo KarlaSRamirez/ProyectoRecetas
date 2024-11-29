@@ -7,7 +7,6 @@ public partial class IngredientPage : ContentPage
     public IngredientPage()
     {
         InitializeComponent();
-        LoadIngredients();
     }
 
     protected override void OnAppearing()

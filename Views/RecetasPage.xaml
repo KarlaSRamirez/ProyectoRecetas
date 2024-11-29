@@ -10,8 +10,16 @@
         <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
                     AbsoluteLayout.LayoutFlags="All">
             <StackLayout x:Name="RecetasContainer" Padding="20" Spacing="20">
-
-
+                <Button Text="+"
+                    FontSize="35"
+                    CornerRadius="20"
+                    BorderColor="Gray"
+                    BorderWidth="1"
+                    BackgroundColor="LightGray"
+                    TextColor="Gray"
+                    WidthRequest="350"
+                    HeightRequest="100" 
+                    Clicked="OnAddButton"/>
             </StackLayout>
         </ScrollView>
 
