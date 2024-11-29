@@ -6,8 +6,59 @@ public partial class AddRecipePage : ContentPage
 	public AddRecipePage()
 	{
 		InitializeComponent();
+        LoadIngredients();
+        LoadUnits();
 	}
+    private void LoadIngredients()
+    {
+        // Aquí puedes obtener los ingredientes de una base de datos o una lista predeterminada
+        var ingredients = new List<string>
+            {
+                "Tomate","Lechuga","Cebolla","Pimiento","Ajo"
+            };
 
+        // Asignar los ingredientes al Picker
+        IngredientPicker.ItemsSource = ingredients;
+    }
+
+    private void OnIngredientSelected(object sender, EventArgs e)
+    {
+        var selectedIngredient = IngredientPicker.SelectedItem as string;
+    }
+
+    private void LoadUnits()
+    {
+        var units = new List<string>
+        {
+            "gr","Kg","L","ml","piezas","galon"
+        };
+        UnitPicker.ItemsSource = units;
+    }
+
+    private void OnUnitSelected(object sender, EventArgs e)
+    {
+        var selectedUnit = UnitPicker.SelectedItem as string;
+    }
+    private void OnCantidadTextChanged(object sender, TextChangedEventArgs e)
+    {
+        var entry = sender as Entry;
+
+        // Verificar si el texto ingresado es un número válido
+        if (!string.IsNullOrEmpty(entry.Text) && !IsNumeric(entry.Text))
+        {
+            // Si el texto no es numérico, lo revertimos al valor anterior
+            entry.Text = e.OldTextValue;
+        }
+    }
+    private bool IsNumeric(string text)
+    {
+        return decimal.TryParse(text, out _);
+    }
+    private void OnDateSelected(object sender, DateChangedEventArgs e)
+    {
+        // Capturar la fecha seleccionada
+        var selectedDate = e.NewDate;
+    }
     private void OnEditorTextChanged(object sender, TextChangedEventArgs e)
     {
         var editor = sender as Editor;
@@ -22,11 +73,11 @@ public partial class AddRecipePage : ContentPage
 
     private async void OnIngredientAdded(object sender, EventArgs e)
     {
-        var name = Nombre.Text;
+        var name = IngredientPicker.SelectedItem as string;
         var description = Descripcion.Text;
         var quantity = Cantidad.Text;
-        var unit = Unidad_de_Medida.Text;
-        var expiration = Caducidad.Text;
+        var unit = UnitPicker.SelectedItem as string;
+        var expiration = datePicker.Date.ToString("yyyy-MM-dd");
 
         // Crear la cadena de conexión
         var builder = new MySqlConnectionStringBuilder
