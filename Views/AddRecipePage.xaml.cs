@@ -47,15 +47,27 @@ public partial class AddRecipePage : ContentPage
 
             // Consulta para verificar las credenciales del usuario
             string query = "INSERT INTO ingredientes (Nombre, Descripcion, Cantidad, Unidad_de_Medida, Caducidad) VALUES (@name, @description, @quantity, @unit, @expiration)";
-
             using var command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@description", description);
             command.Parameters.AddWithValue("@quantity", quantity);
             command.Parameters.AddWithValue("@unit", unit);
             command.Parameters.AddWithValue("@expiration", expiration);
-
             await command.ExecuteNonQueryAsync();
+
+            // Hacer relacion
+            string query2 = @"INSERT INTO usuarios_ingredientes (ID_User, ID_Ingrediente) VALUES (
+                                (SELECT ID_User FROM Usuarios WHERE Nombre = @usuarioNow), 
+                                (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)
+                            )";
+            using var command2 = new MySqlCommand(query2, connection);
+            command2.Parameters.AddWithValue("@usuarioNow", GlobalVariables.UsuarioActual);
+            command2.Parameters.AddWithValue("@name", name);
+            command2.Parameters.AddWithValue("@description", description);
+            command2.Parameters.AddWithValue("@quantity", quantity);
+            command2.Parameters.AddWithValue("@unit", unit);
+            command2.Parameters.AddWithValue("@expiration", expiration);
+            await command2.ExecuteNonQueryAsync();
 
             await DisplayAlert("Éxito", "Se ha agregado un nuevo ingrediente.", "OK");
             await Navigation.PopAsync();

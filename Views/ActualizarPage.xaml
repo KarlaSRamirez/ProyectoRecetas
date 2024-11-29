@@ -52,7 +52,7 @@
                 TextChanged="OnEditorTextChanged"/>
             <Button BackgroundColor="Green"
                 Text="Actualizar"
-                Clicked=""/>
+                    Clicked="ActualizarButton"/>
 
         </StackLayout>
     </Border>

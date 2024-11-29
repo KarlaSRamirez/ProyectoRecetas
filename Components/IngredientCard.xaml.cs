@@ -1,6 +1,5 @@
 using MySqlConnector;
-using ProyectoRecetas.Views;
-using static ProyectoRecetas.Views.IngredientPage;
+using ProyectoRecetas.Views;using static ProyectoRecetas.Views.IngredientPage;
 
 namespace ProyectoRecetas.Components
 {
@@ -96,11 +95,24 @@ namespace ProyectoRecetas.Components
                 using var connection = new MySqlConnection(builder.ConnectionString);
                 await connection.OpenAsync();
 
-                // Consulta SQL para eliminar el ingrediente
-                string deleteQuery = "DELETE FROM ingredientes WHERE Nombre = @Nombre";
+                // Eliminar relacion
+                string query1 = "DELETE FROM usuarios_ingredientes WHERE ID_Ingrediente = (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)";
+                using var command1 = new MySqlCommand(query1, connection);
+                command1.Parameters.AddWithValue("@name", Name);
+                command1.Parameters.AddWithValue("@description", Description);
+                command1.Parameters.AddWithValue("@quantity", Quantity);
+                command1.Parameters.AddWithValue("@unit", Unit);
+                command1.Parameters.AddWithValue("@expiration", Expiration);
+                await command1.ExecuteNonQueryAsync();
 
+                // Consulta SQL para eliminar el ingrediente
+                string deleteQuery = "DELETE FROM ingredientes WHERE ID_Ingrediente = (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)"; //Cambiar "name" por el id del ingrediente
                 using var command = new MySqlCommand(deleteQuery, connection);
-                command.Parameters.AddWithValue("@Nombre", Name);
+                command.Parameters.AddWithValue("@name", Name);
+                command.Parameters.AddWithValue("@description", Description);
+                command.Parameters.AddWithValue("@quantity", Quantity);
+                command.Parameters.AddWithValue("@unit", Unit);
+                command.Parameters.AddWithValue("@expiration", Expiration);
 
                 int rowsAffected = await command.ExecuteNonQueryAsync();
 
@@ -137,7 +149,8 @@ namespace ProyectoRecetas.Components
 
         private async void NavActualizar(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ActualizarPage());
+
+            await Navigation.PushAsync(new ActualizarPage(Name, Description, Quantity, Unit, Expiration));
         }
     }
 }

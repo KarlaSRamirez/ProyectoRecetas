@@ -1,16 +1,16 @@
 namespace ProyectoRecetas.Views;
 using MySqlConnector;
 
+public static class GlobalVariables
+{
+    public static string UsuarioActual { get; set; } = string.Empty;
+}
+
 public partial class MainPage : ContentPage
 {
     public MainPage()
     {
         InitializeComponent();
-    }
-
-    public static class GlobalVariables
-    {
-        public static string UsuarioActual { get; set; } = string.Empty;
     }
 
     private async void OnSigninButtonClicked(object sender, EventArgs e)
