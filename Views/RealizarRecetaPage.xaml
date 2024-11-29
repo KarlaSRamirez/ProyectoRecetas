@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoRecetas.Views.RealizarRecetaPage"
+             Title="Realizar Receta">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20" BackgroundColor="White">
+
+            <!-- Entrada para el nombre de la receta -->
+            <Entry Placeholder="Nombre de la receta"
+                   FontSize="20"
+                   BackgroundColor="#E0E0E0"
+                   HorizontalOptions="Fill"
+                   HeightRequest="50"
+                   Margin="0,10,0,0"
+                   IsReadOnly="True" />
+            <!-- Solo para mostrar, no editable -->
+
+            <!-- Contenedor para Ingredientes e Instrucciones -->
+            <Frame BackgroundColor="#A8E6A1"
+                   CornerRadius="10"
+                   Padding="15"
+                   Margin="0,10,0,0">
+                <StackLayout Spacing="20">
+
+                    <!-- Ingredientes -->
+                    <Label Text="Ingredientes:"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                    <Label x:Name="IngredientesLabel"
+                           Text="Aquí se mostrarán los ingredientes..."
+                           FontSize="16"
+                           BackgroundColor="White"
+                           TextColor="Black"
+                           HeightRequest="100"
+                           VerticalTextAlignment="Start"
+                           Padding="10"/>
+
+                    <!-- Instrucciones -->
+                    <Label Text="Instrucciones:"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                    <Label x:Name="InstruccionesLabel"
+                           Text="Aquí se mostrarán las instrucciones..."
+                           FontSize="16"
+                           BackgroundColor="White"
+                           TextColor="Black"
+                           HeightRequest="150"
+                           VerticalTextAlignment="Start"
+                           Padding="10"/>
+
+                </StackLayout>
+            </Frame>
+            <Button Text="Hecha"
+                    FontSize="18"
+                    TextColor="White"
+                    BackgroundColor="#4CAF50"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    Clicked="OnRealizarRecetaClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
