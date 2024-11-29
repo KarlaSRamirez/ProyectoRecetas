@@ -10,13 +10,24 @@ public partial class IngredientPage : ContentPage
         LoadIngredients();
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        // Limpia las tarjetas para evitar duplicados
+        ingredientCardsStackLayout.Children.Clear();
+
+        // Recarga los ingredientes desde la base de datos
+        LoadIngredients();
+    }
+
     // Definición de la clase Ingredient
     public class Ingredient
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
         public int Quantity { get; set; }
-        public string Unit { get; set; }
+        public string Unit { get; set; } = string.Empty;
         public DateTime Expiration { get; set; }
     }
 
