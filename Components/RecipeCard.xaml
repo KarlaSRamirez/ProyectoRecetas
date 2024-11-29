@@ -5,17 +5,16 @@
     <Frame BackgroundColor="#FFFFFF" CornerRadius="10" Padding="10">
         <StackLayout>
             <Frame BackgroundColor="#6CA96C" Padding="5" CornerRadius="5">
-                <Label Text="Recipe" 
+                <Label x:Name="RecipeTitle" 
+                       Text="Título de la receta" 
                        TextColor="White" 
                        FontAttributes="Bold" 
                        FontSize="16" />
             </Frame>
-            <Label Text="Description: Lorem Ipsum blablabla"
-                   FontSize="14"
+            <Label x:Name="RecipeSteps" 
+                   Text="Descripción: Lorem Ipsum blablabla" 
+                   FontSize="14" 
                    TextColor="Gray" />
-            <BoxView HeightRequest="100" BackgroundColor="#CCCCCC" 
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Center" />
         </StackLayout>
     </Frame>
 </ContentView>
