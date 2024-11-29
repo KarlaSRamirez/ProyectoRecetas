@@ -30,7 +30,7 @@ public partial class AddRecipePage : ContentPage
     {
         var units = new List<string>
         {
-            "gr","Kg","L","ml","piezas","galon"
+            "Gramos","Kilogramos","Litros","Mililitros","Piezas","Galon"
         };
         UnitPicker.ItemsSource = units;
     }

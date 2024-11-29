@@ -18,8 +18,11 @@
                FontSize="Large" 
                Margin="0,0,0,20"/>
             <Label Text="Ingrediente"/>
-            <Entry x:Name="Nombre" 
-               Background="Transparent"/>
+            <Picker x:Name="IngredientPicker"
+                Title="Selecciona un ingrediente"
+                SelectedIndexChanged="OnIngredientSelected"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand" />
 
             <StackLayout Orientation="Horizontal" 
                      HorizontalOptions="Center" 
@@ -30,20 +33,25 @@
                     <Label Text="Cantidad" 
                        HorizontalTextAlignment="Center"/>
                     <Entry x:Name="Cantidad" 
-                       Background="Transparent"/>
+                       Background="Transparent"
+                       Keyboard="Numeric"
+                       TextChanged="OnCantidadTextChanged"/>
                 </StackLayout>
 
                 <StackLayout>
                     <Label Text="Unidad de Medida"/>
-                    <Entry x:Name="Unidad_de_Medida" 
-                       Background="Transparent"/>
+                    <Picker x:Name="UnitPicker"
+                        SelectedIndexChanged="OnUnitSelected"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand" />
                 </StackLayout>
 
             </StackLayout>
             <Label Text="Fecha Caducidad"></Label>
-            <Entry x:Name="Caducidad" 
-               Background="Transparent" 
-               Placeholder="YYYY-MM-DD"></Entry>
+            <DatePicker x:Name="datePicker"
+                DateSelected="OnDateSelected"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="CenterAndExpand"/>
             <Label Text="Descripcion"></Label>
             <Editor x:Name="Descripcion" 
                 Background="Transparent" 

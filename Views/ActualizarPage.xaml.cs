@@ -4,35 +4,89 @@ namespace ProyectoRecetas.Views;
 
 public partial class ActualizarPage : ContentPage
 {
-    private string _name;
-    private string _description;
-    private string _quantity;
-    private string _unit;
-    private string _expiration;
+    private readonly string _name;
+    private readonly string _description;
+    private readonly string _quantity;
+    private readonly string _unit;
+    private readonly string _expiration;
 
 	public ActualizarPage(string name, string description, int quantity, string unit, DateTime expiration)
 	{
 		InitializeComponent();
+        LoadIngredients();
+        LoadUnits();
         _name = name;
         _description = description;
         _quantity = quantity.ToString();
         _unit = unit;
         _expiration = expiration.ToString("yyyy-MM-dd");
 
-        Nombre.Text = _name;
+        IngredientPicker.SelectedItem = _name;
         Cantidad.Text = _quantity;
         Descripcion.Text = _description;
-        Unidad_de_Medida.Text = _unit;
-        Caducidad.Text = _expiration;
+        UnitPicker.SelectedItem = _unit;
+        datePicker.Date = expiration;
 	}
+
+    private void OnIngredientSelected(object sender, EventArgs e)
+    {
+        var selectedIngredient = IngredientPicker.SelectedItem as string;
+    }
+
+    private void LoadUnits()
+    {
+        var units = new List<string>
+        {
+            "Gramos","Kilogramos","Litros","Mililitros","Piezas","Galon"
+        };
+        UnitPicker.ItemsSource = units;
+    }
+
+    private void LoadIngredients()
+    {
+        // Aquí puedes obtener los ingredientes de una base de datos o una lista predeterminada
+        var ingredients = new List<string>
+            {
+                "Tomate","Lechuga","Cebolla","Pimiento","Ajo"
+            };
+
+        // Asignar los ingredientes al Picker
+        IngredientPicker.ItemsSource = ingredients;
+    }
+
+    private void OnUnitSelected(object sender, EventArgs e)
+    {
+        var selectedUnit = UnitPicker.SelectedItem as string;
+    }
+
+    private void OnCantidadTextChanged(object sender, TextChangedEventArgs e)
+    {
+        var entry = sender as Entry;
+
+        // Verificar si el texto ingresado es un número válido
+        if (!string.IsNullOrEmpty(entry.Text) && !IsNumeric(entry.Text))
+        {
+            // Si el texto no es numérico, lo revertimos al valor anterior
+            entry.Text = e.OldTextValue;
+        }
+    }
+    private bool IsNumeric(string text)
+    {
+        return decimal.TryParse(text, out _);
+    }
+    private void OnDateSelected(object sender, DateChangedEventArgs e)
+    {
+        // Capturar la fecha seleccionada
+        var selectedDate = e.NewDate;
+    }
 
     private async void ActualizarButton(object sender, EventArgs e)
     {
-        var name = Nombre.Text;
+        var name = IngredientPicker.SelectedItem as string;
         var description = Descripcion.Text;
         var quantity = Cantidad.Text;
-        var unit = Unidad_de_Medida.Text;
-        var expiration = Caducidad.Text;
+        var unit = UnitPicker.SelectedItem as string;
+        var expiration = datePicker.Date.ToString("yyyy-MM-dd");
 
         // Crear la cadena de conexión
         var builder = new MySqlConnectionStringBuilder
