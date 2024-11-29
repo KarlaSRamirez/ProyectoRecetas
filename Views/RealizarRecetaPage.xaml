@@ -7,7 +7,7 @@
         <StackLayout Padding="20" Spacing="20" BackgroundColor="White">
 
             <!-- Entrada para el nombre de la receta -->
-            <Label FontSize="20"
+            <Label x:Name="NombreReceta" FontSize="20"
                    Text="Nombre receta"
                    HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center"
@@ -25,7 +25,7 @@
                 <StackLayout Spacing="20">
 
                     <!-- Ingredientes -->
-                    <Label Text="Ingredientes:"
+                    <Label x:Name="IngredientesReceta" Text="Ingredientes:"
                            FontSize="18"
                            FontAttributes="Bold"
                            TextColor="Black"/>
@@ -39,7 +39,7 @@
                            Padding="10"/>
 
                     <!-- Instrucciones -->
-                    <Label Text="Instrucciones:"
+                    <Label x:Name="InstruccionesReceta" Text="Instrucciones:"
                            FontSize="18"
                            FontAttributes="Bold"
                            TextColor="Black"/>
@@ -61,7 +61,8 @@
                     CornerRadius="10"
                     HorizontalOptions="Center"
                     WidthRequest="200"
-                    HeightRequest="50"/>
+                    HeightRequest="50"
+                    Clicked="HechoButton"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
