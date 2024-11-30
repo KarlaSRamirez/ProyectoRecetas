@@ -1,4 +1,4 @@
-using MySqlConnector;
+, using MySqlConnector;
 
 namespace ProyectoRecetas.Views;
 
@@ -47,7 +47,7 @@ public partial class ActualizarPage : ContentPage
         // Aquí puedes obtener los ingredientes de una base de datos o una lista predeterminada
         var ingredients = new List<string>
             {
-                "Tomate","Lechuga","Cebolla","Pimiento","Ajo"
+                "Aceite de coco","Aceite de oliva","Aceite de sésamo","Aceite vegetal","Ajo","Albahaca seca","Almendras","Anís estrellado","Arroz","Arándanos","Atún enlatado","Avellanas","Avena","Azúcar","Azúcar glas","Azúcar mascabado","Berenjena","Betabel","Bicarbonato de sodio","Brócoli","Cacao amargo","Cacao en polvo","Calabacín","Calamares","Caldo","Camarones","Canela","Cardamomo","Carne de res","Carne molida","Cebolla","Cereza","Champiñones","Chayote","Chiles habaneros","Chiles jalapeños","Chiles poblanos","Chocolate","Chocolate con leche","Chocolate oscuro","Chorizo","Cilantro","Ciruela","Clavo de olor","Coliflor","Comino","Crema","Crema de coco","Curry en polvo","Cuscús","Cúrcuma","Durazno","Elote","Espinacas","Espárragos","Estragón","Extracto de vainilla","Fideos de arroz","Frambuesa","Fresa","Frijoles negros","Garbanzos","Gelatina sin sabor","Harina","Harina de maíz","Huevos","Jamón","Jarabe de agave","Jarabe de maíz","Jengibre fresco","Kétchup","Laurel","Leche","Leche condensada","Leche de almendras","Leche de avena","Leche de soya","Leche evaporada","Lechuga","Lentejas","Levadura seca","Lima","Limón","Maicena","Mango","Manteca de cerdo","Mantequilla","Manzana","Maní","Masa para tortillas","Mayonesa","Mejillones","Melón","Mermelada","Miel","Moras","Mostaza","Muslos de pollo","Naranja","Nopal","Nueces","Nuez moscada","Orégano","Pan","Pan rallado","Papas","Papaya","Paprika","Pasta","Pechuga de pollo","Pepino","Pera","Perejil","Pescado","Pescado blanco","Piernas de pollo","Pimienta negra","Pimientos","Piña","Plátano","Pollo","Polvo para hornear","Queso","Queso crema","Queso feta","Queso manchego","Queso parmesano","Quinoa","Romero","Rábanos","Sal","Salchichas","Salmón","Salsa de soya","Salsa inglesa","Sandía","Semillas de chía","Semillas de girasol","Semillas de lino","Setas","Sémola","Tocino","Tomates","Tomillo","Tortillas","Uvas","Vinagre","Vinagre balsámico","Vinagre de arroz","Vinagre de vino tinto","Yogur","Zanahorias"
             };
 
         // Asignar los ingredientes al Picker

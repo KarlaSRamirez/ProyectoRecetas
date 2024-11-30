@@ -24,6 +24,7 @@
             CornerRadius="100"
             BackgroundColor="#41B149"
             TextColor="White"
+            FontSize="Large"
             AbsoluteLayout.LayoutBounds="0.5,0.72"
             AbsoluteLayout.LayoutFlags="All"
             WidthRequest="75"

@@ -25,20 +25,9 @@
         </ScrollView>
 
         <!-- Botón fijo -->
-        <Button Text="A"
-            CornerRadius="100"
-            BackgroundColor="#41B149"
-            TextColor="White"
-            AbsoluteLayout.LayoutBounds="0.32,0.71"
-            AbsoluteLayout.LayoutFlags="All"
-            WidthRequest="75"
-            HeightRequest="75" 
-            Clicked="OnNavigateButtonClicked1"/>
-
-        <Button Text="B"
+        <ImageButton Source="boton_ingredientes.png"
                 CornerRadius="100"
                 BackgroundColor="#41B149"
-                TextColor="White"
                 AbsoluteLayout.LayoutBounds="0.68,0.71"
                 AbsoluteLayout.LayoutFlags="All"
                 WidthRequest="75"
