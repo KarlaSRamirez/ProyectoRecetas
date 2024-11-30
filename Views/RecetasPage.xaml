@@ -8,7 +8,8 @@
     <AbsoluteLayout>
         <!-- Contenido principal con Scroll -->
         <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
-                    AbsoluteLayout.LayoutFlags="All">
+                    AbsoluteLayout.LayoutFlags="All"
+                    Padding="0,0,0,100">
             <StackLayout x:Name="RecetasContainer" Padding="20" Spacing="20">
                 <Button Text="+"
                     FontSize="35"

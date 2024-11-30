@@ -25,30 +25,28 @@
                 <StackLayout Spacing="20">
 
                     <!-- Ingredientes -->
-                    <Label x:Name="IngredientesReceta" Text="Ingredientes:"
+                    <Label Text="Ingredientes:"
                            FontSize="18"
                            FontAttributes="Bold"
                            TextColor="Black"/>
-                    <Label x:Name="IngredientesLabel"
+                    <Label x:Name="IngredientesReceta" 
                            Text="Aquí se mostrarán los ingredientes..."
                            FontSize="16"
                            BackgroundColor="White"
                            TextColor="Black"
-                           HeightRequest="100"
                            VerticalTextAlignment="Start"
                            Padding="10"/>
 
                     <!-- Instrucciones -->
-                    <Label x:Name="InstruccionesReceta" Text="Instrucciones:"
+                    <Label  Text="Instrucciones:"
                            FontSize="18"
                            FontAttributes="Bold"
                            TextColor="Black"/>
-                    <Label x:Name="InstruccionesLabel"
+                    <Label x:Name="InstruccionesReceta"
                            Text="Aquí se mostrarán las instrucciones..."
                            FontSize="16"
                            BackgroundColor="White"
                            TextColor="Black"
-                           HeightRequest="150"
                            VerticalTextAlignment="Start"
                            Padding="10"/>
 

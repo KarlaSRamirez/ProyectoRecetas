@@ -14,6 +14,7 @@ namespace ProyectoRecetas.Views
 
         public class Recipe
         {
+            public int Id { get; set; }
             public string Name { get; set; }
             public string Instruction { get; set; }
             public string Ingredients { get; set; }
@@ -37,7 +38,7 @@ namespace ProyectoRecetas.Views
                 using var connection = new MySqlConnection(builder.ConnectionString);
                 await connection.OpenAsync();
                 // Consulta para obtener todos las recetas
-                string query = "SELECT * FROM Recetas ORDER BY RAND() LIMIT 5";
+                string query = "SELECT * FROM Recetas ORDER BY RAND() LIMIT 10";
                 using var command = new MySqlCommand(query, connection);
 
                 using var reader = await command.ExecuteReaderAsync();
@@ -47,6 +48,7 @@ namespace ProyectoRecetas.Views
                     // Crear una nueva receta y agregarlo a la lista
                     var recipe = new Recipe
                     {
+                        Id = reader.GetInt32("ID_Receta"),
                         Name = reader.GetString("Nombre"),
                         Instruction = reader.GetString("Instrucciones"),
                         Ingredients = reader.GetString("Ingredientes")
@@ -60,6 +62,7 @@ namespace ProyectoRecetas.Views
                 {
                     RecipeCard ingredientCard = new RecipeCard
                     (
+                        recipe.Id,
                         recipe.Name,
                         recipe.Instruction,
                         recipe.Ingredients
