@@ -9,9 +9,13 @@ namespace ProyectoRecetas.Views
         public RecetasPage()
         {
             InitializeComponent();
-            LoadRecipes();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadRecipes();
+        }
         public class Recipe
         {
             public string Name { get; set; }
@@ -79,10 +83,6 @@ namespace ProyectoRecetas.Views
             await Navigation.PushAsync(new IngredientPage());
         }
 
-        private async void OnNavigateButtonClicked1(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new HistoryPage());
-        }
         private async void OnAddButton(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddNewPage());
