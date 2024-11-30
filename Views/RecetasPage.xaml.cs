@@ -14,6 +14,25 @@ namespace ProyectoRecetas.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            RecetasContainer.Children.Clear();
+
+            var addButton = new Button
+            {
+                Text = "+",
+                FontSize = 35,
+                CornerRadius = 20,
+                BorderColor = Colors.Gray,
+                BorderWidth = 1,
+                BackgroundColor = Colors.LightGray,
+                TextColor = Colors.Gray,
+                WidthRequest = 350,
+                HeightRequest = 100,
+            };
+
+            addButton.Clicked += OnAddButton;
+
+            RecetasContainer.Children.Add(addButton);
+
             LoadRecipes();
         }
         public class Recipe
@@ -29,13 +48,7 @@ namespace ProyectoRecetas.Views
             var recipesList = new List<Recipe>();
 
             // Crear la cadena de conexión
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "192.168.247.1",     // Dirección del servidor de la base de datos
-                UserID = "root",              // Usuario
-                Password = "11julio2002",     // Contraseña
-                Database = "RecetasBD"        // Nombre de la base de datos
-            };
+            var builder = DatabaseConfig.GetConnectionStringBuilder();
 
             try
             {

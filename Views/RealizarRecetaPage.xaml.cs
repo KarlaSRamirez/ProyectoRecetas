@@ -21,6 +21,6 @@ public partial class RealizarRecetaPage : ContentPage
 
     private async void HechoButton(object sender, EventArgs e)
     {
-                await Navigation.PopAsync();
+        await Navigation.PopAsync();
     }
 }

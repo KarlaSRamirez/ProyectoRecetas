@@ -16,15 +16,7 @@ public partial class AddNewPage : ContentPage
         var ingredients = Ingredientes.Text;
 
         // Crear la cadena de conexión
-        var builder = new MySqlConnectionStringBuilder
-        {
-            // IP Joska 247.1
-            // IP Sugey 0.249
-            Server = "192.168.247.1",     // Dirección del servidor de la base de datos
-            UserID = "root",          // Usuario
-            Password = "11julio2002",  // Contraseña del usuario
-            Database = "RecetasBD"    // Nombre de la base de datos
-        };
+        var builder = DatabaseConfig.GetConnectionStringBuilder();
 
         try
         {

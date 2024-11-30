@@ -84,13 +84,7 @@ namespace ProyectoRecetas.Components
             try
             {
                 // Cadena de conexión a la base de datos
-                var builder = new MySqlConnectionStringBuilder
-                {
-                    Server = "192.168.247.1", // Cambia a tu dirección IP o servidor
-                    UserID = "root",
-                    Password = "11julio2002", // Cambia por tu contraseña
-                    Database = "RecetasBD"
-                };
+                var builder = DatabaseConfig.GetConnectionStringBuilder();
 
                 using var connection = new MySqlConnection(builder.ConnectionString);
                 await connection.OpenAsync();

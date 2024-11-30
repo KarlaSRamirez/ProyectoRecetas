@@ -6,6 +6,20 @@ public static class GlobalVariables
     public static string UsuarioActual { get; set; } = string.Empty;
 }
 
+public static class DatabaseConfig
+{
+    public static MySqlConnectionStringBuilder GetConnectionStringBuilder()
+    {
+        return new MySqlConnectionStringBuilder
+        {
+            Server = "192.168.247.1",     // Dirección del servidor de la base de datos
+            UserID = "user",              // Usuario
+            Password = "userPassword",    // Contraseña del usuario
+            Database = "RecetasBD"        // Nombre de la base de datos
+        };
+    }
+}
+
 public partial class MainPage : ContentPage
 {
     public MainPage()
@@ -24,16 +38,7 @@ public partial class MainPage : ContentPage
         var password = ((StackLayout)((Button)sender).Parent).Children.OfType<Entry>().FirstOrDefault(x => x.Placeholder == "Password")?.Text;
 
         // Crear la cadena de conexión
-        var builder = new MySqlConnectionStringBuilder
-        {
-            // IP Joska 247.1
-            // IP Sugey 0.249
-            Server = "192.168.247.1",     // Dirección del servidor de la base de datos
-            UserID = "root",          // Usuario
-            Password = "11julio2002",  // Contraseña del usuario
-            Database = "RecetasBD"    // Nombre de la base de datos
-        };
- 
+        var builder = DatabaseConfig.GetConnectionStringBuilder();
         try
         {
             // Crear la conexión y abrirla de manera asincrónica
