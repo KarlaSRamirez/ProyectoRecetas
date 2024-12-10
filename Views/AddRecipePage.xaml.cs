@@ -89,7 +89,7 @@ public partial class AddRecipePage : ContentPage
             await connection.OpenAsync();
 
             // Consulta para verificar las credenciales del usuario
-            string query = "INSERT INTO ingredientes (Nombre, Descripcion, Cantidad, Unidad_de_Medida, Caducidad) VALUES (@name, @description, @quantity, @unit, @expiration)";
+            string query = "INSERT INTO Ingredientes (Nombre, Descripcion, Cantidad, Unidad_de_Medida, Caducidad) VALUES (@name, @description, @quantity, @unit, @expiration)";
             using var command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@description", description);
@@ -99,7 +99,7 @@ public partial class AddRecipePage : ContentPage
             await command.ExecuteNonQueryAsync();
 
             // Hacer relacion
-            string query2 = @"INSERT INTO usuarios_ingredientes (ID_User, ID_Ingrediente) VALUES (
+            string query2 = @"INSERT INTO Usuarios_Ingredientes (ID_User, ID_Ingrediente) VALUES (
                                 (SELECT ID_User FROM Usuarios WHERE Nombre = @usuarioNow), 
                                 (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)
                             )";

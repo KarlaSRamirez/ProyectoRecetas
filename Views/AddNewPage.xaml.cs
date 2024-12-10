@@ -25,7 +25,7 @@ public partial class AddNewPage : ContentPage
             await connection.OpenAsync();
 
             // Consulta para verificar las credenciales del usuario
-            string query = "INSERT INTO recetas (Nombre, Instrucciones, Ingredientes) VALUES (@name, @instructions, @ingredients)";
+            string query = "INSERT INTO Recetas (Nombre, Instrucciones, Ingredientes) VALUES (@name, @instructions, @ingredients)";
             using var command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@instructions", instructions);

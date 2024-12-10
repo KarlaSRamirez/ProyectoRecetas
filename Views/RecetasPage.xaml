@@ -32,6 +32,7 @@
                 AbsoluteLayout.LayoutFlags="All"
                 WidthRequest="75"
                 HeightRequest="75" 
+                Aspect="AspectFill"
                 Clicked="OnNavigateButtonClicked"/>
     </AbsoluteLayout>
 

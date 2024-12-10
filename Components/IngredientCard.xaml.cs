@@ -90,7 +90,7 @@ namespace ProyectoRecetas.Components
                 await connection.OpenAsync();
 
                 // Eliminar relacion
-                string query1 = "DELETE FROM usuarios_ingredientes WHERE ID_Ingrediente = (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)";
+                string query1 = "DELETE FROM Usuarios_Ingredientes WHERE ID_Ingrediente = (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)";
                 using var command1 = new MySqlCommand(query1, connection);
                 command1.Parameters.AddWithValue("@name", Name);
                 command1.Parameters.AddWithValue("@description", Description);
@@ -100,7 +100,7 @@ namespace ProyectoRecetas.Components
                 await command1.ExecuteNonQueryAsync();
 
                 // Consulta SQL para eliminar el ingrediente
-                string deleteQuery = "DELETE FROM ingredientes WHERE ID_Ingrediente = (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)"; //Cambiar "name" por el id del ingrediente
+                string deleteQuery = "DELETE FROM Ingredientes WHERE ID_Ingrediente = (SELECT ID_Ingrediente FROM Ingredientes WHERE Nombre = @name AND Descripcion = @description AND Cantidad = @quantity AND Unidad_de_Medida = @unit AND Caducidad = @expiration)"; //Cambiar "name" por el id del ingrediente
                 using var command = new MySqlCommand(deleteQuery, connection);
                 command.Parameters.AddWithValue("@name", Name);
                 command.Parameters.AddWithValue("@description", Description);

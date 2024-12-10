@@ -42,7 +42,7 @@ public partial class IngredientPage : ContentPage
             using var connection = new MySqlConnection(builder.ConnectionString);
             await connection.OpenAsync();
             // Consulta para obtener todos los ingredientes
-            string query = "SELECT * FROM Ingredientes WHERE ID_ingrediente IN (SELECT ID_ingrediente FROM usuarios_ingredientes WHERE ID_User = (SELECT ID_User FROM usuarios WHERE Nombre = @nombreUsuario))";
+            string query = "SELECT * FROM Ingredientes WHERE ID_ingrediente IN (SELECT ID_ingrediente FROM Usuarios_Ingredientes WHERE ID_User = (SELECT ID_User FROM Usuarios WHERE Nombre = @nombreUsuario))";
             using var command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@nombreUsuario", GlobalVariables.UsuarioActual);
 

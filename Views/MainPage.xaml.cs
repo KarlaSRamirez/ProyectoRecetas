@@ -12,10 +12,12 @@ public static class DatabaseConfig
     {
         return new MySqlConnectionStringBuilder
         {
-            Server = "192.168.247.1",     // Dirección del servidor de la base de datos
-            UserID = "user",              // Usuario
-            Password = "userPassword",    // Contraseña del usuario
-            Database = "RecetasBD"        // Nombre de la base de datos
+            Server = "database-1.cj6ekayk6k4t.us-east-2.rds.amazonaws.com",
+            Port = 3306, // Dirección del servidor de la base de datos
+            UserID = "admin",              // Usuario
+            Password = "11julio2002",    // Contraseña del usuario
+            Database = "RecetasBD",       // Nombre de la base de datos
+            SslMode = MySqlSslMode.None
         };
     }
 }
