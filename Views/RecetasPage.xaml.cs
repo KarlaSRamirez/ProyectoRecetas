@@ -103,5 +103,9 @@ namespace ProyectoRecetas.Views
         {
             await Navigation.PushAsync(new AddNewPage());
         }
+        private async void OnNavigateButton2Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new graficPage());
+        }
     }
 }

@@ -30,10 +30,20 @@
                 BackgroundColor="#41B149"
                 AbsoluteLayout.LayoutBounds="0.68,0.71"
                 AbsoluteLayout.LayoutFlags="All"
-                WidthRequest="75"
-                HeightRequest="75" 
+                WidthRequest="60"
+                HeightRequest="60" 
                 Aspect="AspectFill"
                 Clicked="OnNavigateButtonClicked"/>
+        
+        <ImageButton Source="barra_grafica.png"
+                CornerRadius="100"
+                BackgroundColor="#000"
+                AbsoluteLayout.LayoutBounds="0.32,0.71"
+                AbsoluteLayout.LayoutFlags="All"
+                WidthRequest="60"
+                HeightRequest="60" 
+                Aspect="AspectFill"
+                Clicked="OnNavigateButton2Clicked"/>
     </AbsoluteLayout>
 
 </ContentPage>
